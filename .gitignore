@@ -5,3 +5,4 @@ report_card_errors.log
 __pycache__/
 .idea/
 main.py
+marksheet.json
