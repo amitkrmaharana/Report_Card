@@ -25,12 +25,21 @@ class MarksheetOperations:
         :return:
         """
         try:
-            marksheet1 = Marksheet(roll_id=103, name="kajal", History=65, Maths=65, Science=82)
+            marksheet1 = Marksheet(roll_id=104, name="kajal", History=65, Maths=65, Science=82)
             session.add(marksheet1)
             session.commit()
             return session.query(Marksheet).count()
         except Exception as e:
             logger.exception(e)
 
+    def delete_row(self, value):
+        """
 
-
+        :param value: value of the attribute
+        :return: count of rows affected
+        """
+        try:
+            session.query(Marksheet).filter(Marksheet.roll_id == value).delete()
+            return session.query(Marksheet).count()
+        except Exception as e:
+            logger.exception(e)

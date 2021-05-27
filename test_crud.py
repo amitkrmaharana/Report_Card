@@ -20,3 +20,13 @@ class TestMarksheetOperations:
         """
         row_count = self.marksheet_operation.insert_data()
         assert row_count == 1, "Data not inserted"
+
+    def test_delete_row(self):
+        """
+
+        :return: check if row is deleted or not
+        """
+        attribute = "roll_id"
+        value = 103
+        row_count = self.marksheet_operation.delete_row(value)
+        assert row_count == 1, "Row not deleted"
