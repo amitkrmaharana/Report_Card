@@ -1,0 +1,7 @@
+venv/
+config.py
+logger.py
+report_card_errors.log
+__pycache__/
+.idea/
+main.py
