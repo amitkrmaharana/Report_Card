@@ -11,19 +11,9 @@ class MarksheetOperations:
         :return: True if table created
         """
         try:
-            table_list = {}
             Base.metadata.drop_all(engine)
             Base.metadata.create_all(engine)
             return metadata.tables
         except Exception as e:
             logger.exception(e)
 
-    def insert_data(self):
-        """
-
-        :return:
-        """
-
-
-if __name__ == '__main__':
-    MarksheetOperations().create_table()
