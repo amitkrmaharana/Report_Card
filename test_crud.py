@@ -7,7 +7,7 @@ class TestMarksheetOperations:
     def test_create_table(self):
         """
 
-        :return: check table name exist or not
+        :return: checks table name exist or not
         """
         table_name = "marksheet"
         table_dict = self.marksheet_operation.create_table()
@@ -19,16 +19,16 @@ class TestMarksheetOperations:
         :return: check if rows inserted or not
         """
         row_count = self.marksheet_operation.insert_data()
-        assert row_count == 6, "Data not inserted"
+        assert row_count == 5, "Data not inserted"
 
     def test_delete_row(self):
         """
 
         :return: check if row is deleted or not
         """
-        value = 103
+        value = 104
         row_count = self.marksheet_operation.delete_row(value)
-        assert row_count == 5, "Row not deleted"
+        assert row_count == 4, "Row not deleted"
 
     def test_update_row(self):
         """
@@ -37,5 +37,5 @@ class TestMarksheetOperations:
         """
         value = "Mr."
         row_count = self.marksheet_operation.update_row(value)
-        assert row_count == 5, "Row not updated"
+        assert row_count == 4, "Row not updated"
 
