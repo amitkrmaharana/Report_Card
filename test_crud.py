@@ -19,14 +19,23 @@ class TestMarksheetOperations:
         :return: check if rows inserted or not
         """
         row_count = self.marksheet_operation.insert_data()
-        assert row_count == 1, "Data not inserted"
+        assert row_count == 6, "Data not inserted"
 
     def test_delete_row(self):
         """
 
         :return: check if row is deleted or not
         """
-        attribute = "roll_id"
         value = 103
         row_count = self.marksheet_operation.delete_row(value)
-        assert row_count == 1, "Row not deleted"
+        assert row_count == 5, "Row not deleted"
+
+    def test_update_row(self):
+        """
+
+        :return: check if the row is updated or not
+        """
+        value = "Mr."
+        row_count = self.marksheet_operation.update_row(value)
+        assert row_count == 5, "Row not updated"
+
