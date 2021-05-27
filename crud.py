@@ -1,4 +1,4 @@
-from config import engine, session
+from config import engine, session, metadata
 from logger import logger
 from models import Base, Marksheet
 
@@ -11,9 +11,10 @@ class MarksheetOperations:
         :return: True if table created
         """
         try:
+            table_list = {}
             Base.metadata.drop_all(engine)
             Base.metadata.create_all(engine)
-            return session.query(Marksheet).count()
+            return metadata.tables
         except Exception as e:
             logger.exception(e)
 
@@ -24,5 +25,5 @@ class MarksheetOperations:
         """
 
 
-# if __name__ == '__main__':
-#     MarksheetOperations().create_table()
+if __name__ == '__main__':
+    MarksheetOperations().create_table()

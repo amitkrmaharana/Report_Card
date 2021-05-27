@@ -9,5 +9,6 @@ class TestMarksheetOperations:
 
         :return:
         """
-        row_count = self.marksheet_operation.create_table()
-        assert row_count == 0, "Table not created"
+        table_name = "marksheet"
+        table_dict = self.marksheet_operation.create_table()
+        assert table_name in table_dict.keys(), "Table not created"
